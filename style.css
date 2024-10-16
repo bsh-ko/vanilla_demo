@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset */
+body,
+ul,
+p {
+  margin: unset;
+  padding: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: unset;
+  font-weight: unset;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/* CSS Variables */
+:root {
+  /* Typography */
+  font-family: NotosansKR, sans-serif;
+  font-size: 62.5%;
+
+  /* Colors */
+  --color-black: #111;
+  --color-white: #fff;
+  --color-primary: #9e3500;
+  --color-secondary: #007d48;
+  --color-dim: rgba(17, 17, 17, 0.35);
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #cacaca;
+  --color-gray-400: #9e9ea0;
+  --color-gray-500: #707072;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+button {
+  all: unset;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
