@@ -1,97 +1,171 @@
-/* header 가장 위 css */
-.headerMenu {
-    background: var(--F5F5F5, #F5F5F5);
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    color: #111;
 }
 
-.headerMenu ul {
-    display: flex;
-    justify-content: flex-end; 
-    line-height: 36px;
+h1, h2 {
+    font-weight: normal;
 }
 
-.headerMenu li::after {
-    content: "|";
-    display: inline;
-    margin: 0 10px;
-}
-
-.headerMenu li:last-child::after {
-    content: "";
-}
-
-/* 헤더부분 navigator */
-/* 네비게이션 바 스타일 */
-#nav {
+.cart-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--color-white); /* 배경색 */
+    margin-bottom: 40px;
 }
 
-.logo img {
-    width: 60px; /* 로고 크기 조정 */
+#cart-items {
+    width: 60%;
 }
 
-/* 메뉴 링크 스타일 */
-.nav-links {
+#order-summary {
+    width: 35%;
+}
+
+.cart-item {
     display: flex;
-    gap: 20px; /* 각 메뉴 사이 간격 */
-    list-style: none;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.nav-links li a {
+.cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.item-option {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.item-price {
+    font-weight: bold;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.quantity-control button {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-control input {
+    width: 40px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    margin: 0 5px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.remove-item, .add-to-wishlist {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 15px;
+    color: #666;
+}
+
+.order-details {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.order-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    font-size: 18px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+
+#order-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.delivery-info {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.wishlist-container {
+    margin-top: 40px;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.wishlist-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.wishlist-item-details {
+    flex-grow: 1;
+}
+
+.add-to-cart-button {
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid #111;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.see-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: #111;
     text-decoration: none;
-    font-size: 1.6rem;
-    color: var(--color-black);
-    font-weight: 500;
+    font-size: 14px;
 }
-
-.nav-links li a:hover {
-    color: var(--color-primary); /* 마우스 올렸을 때 색상 변화 */
-}
-
-/* 검색 및 장바구니 아이콘 */
-.search-cart {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* 검색창 스타일 */
-.search-box {
-    position: relative;
-}
-
-.search-box input {
-    width: 180px;
-    padding: 10px 40px;
-    border-radius: 50px;
-    border: 1px solid var(--color-gray-300);
-    background-color: var(--color-gray-100);
-    font-size: 1.4rem;
-}
-
-.search-box .search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.search-box .search-icon img {
-    width: 20px;
-    height: 20px;
-}
-
-/* 아이콘 스타일 */
-.icon {
-    display: flex;
-    align-items: center;
-}
-
-.icon img {
-    width: 24px;
-    height: 24px;
-}
-

@@ -1,93 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cart.css">
 </head>
-
 <body>
     <div id="app">
-        <header>
-            <div class="headerMenu">
-                <ul>
-                    <li><a href="#">매장 찾기</a></li>
-                    <li><a href="#">고객센터</a></li>
-                    <li><a href="#">가입하기</a></li>
-                    <li><a href="#">로그인</a></li>
-                </ul>
+        <h1>장바구니</h1>
+        <div class="cart-container">
+            <div id="cart-items"></div> <!-- 장바구니 목록 -->
+            <div id="empty-cart-message" style="display: none;">    <!-- 장바구니 비어있을 때 문구 -->
+                장바구니에 상품이 없습니다.
             </div>
-            <nav id="nav">
-                <a href="#" class="logo">
-                    <img src="../assets/icons/logo/nike.svg" alt="나이키 로고" id="logo">
-                </a>
-                <ul class="nav-links">
-                    <li><a href="#">New & Featured</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Kids</a></li>
-                    <li><a href="#">Sale</a></li>
-                </ul>
-                <div class="search-cart">
-                    <div class="search-box">
-                        <input type="text" placeholder="검색">
-                        <span class="search-icon">
-                            <img src="../assets/icons/button36px/search.svg" alt="돋보기 아이콘">
-                        </span>
+            <div id="order-summary">
+                <h2>주문 내역</h2>
+                <div class="order-details">
+                    <div class="order-row">
+                        <span>상품 금액</span>
+                        <span id="subtotal">0 원</span>
                     </div>
-                    <a href="#" class="icon">
-                        <img src="../assets/icons/button36px/white-heart.svg" alt="하트 아이콘">
-                    </a>
-                    <a href="#" class="icon">
-                        <img src="../assets/icons/button36px/cart-36.svg" alt="장바구니 아이콘">
-                    </a>
+                    <div class="order-row">
+                        <span>배송비</span>
+                        <span id="shipping">무료</span>
+                    </div>
+                    <div class="order-row total">
+                        <strong>총 결제 금액</strong>
+                        <strong id="total">0 원</strong>
+                    </div>
                 </div>
-            </nav>
-        </header>
-        <section class="cart-wishlist">
-            <!-- <div class="cart">
-                <h2>장바구니</h2>
-                <div>장바구니가 비어 있습니다.</div>
+                <button id="order-button">주문결제</button>
             </div>
-            <div class="wishlist">
-                <h2>위시리스트</h2>
-                <div>위시리스트가 비어 있습니다.</div>
-            </div> -->
-        </section>
-
-        <section class="recommended-products">
-            <!-- <h2>추천 제품</h2>
-            <div class="product-list">
-                <div class="product">
-                    <img src="img/shoe.png" alt="제품 이미지">
-                    <h3>나이키 에어 맥스 270</h3>
-                    <p>운동화</p>
-                    <div class="price">₩159,000</div>
-                </div>
-                <div class="product">
-                    <img src="img/jacket.png" alt="제품 이미지">
-                    <h3>나이키 스포츠웨어</h3>
-                    <p>자켓</p>
-                    <div class="price">₩129,000</div>
-                </div>
-                <div class="product">
-                    <img src="img/tshirt.png" alt="제품 이미지">
-                    <h3>나이키 프리미엄 티셔츠</h3>
-                    <p>티셔츠</p>
-                    <div class="price">₩49,000</div>
-                </div>
-            </div> -->
-        </section>
-
-        <!-- <footer>
-            <p>© 2024 Nike, Inc. All Rights Reserved</p>
-        </footer> -->
+        </div>
+        <div class="wishlist-container">
+            <h2>위시리스트</h2>
+            <div id="wishlist-items"></div>
+            <a href="#" class="see-more">위시리스트 상품 모두 보기</a>
+        </div>
     </div>
-        <script src="cart.js"></script>
-    </div>
+    <script src="cart.js"></script>
 </body>
-
 </html>
