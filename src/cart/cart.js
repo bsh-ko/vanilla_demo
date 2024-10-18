@@ -54,7 +54,7 @@ function updateCartView() {
                     </div>
                 </div>
                 <div class="item-actions">
-                    <button class="add-to-wishlist" onclick="addToWishlist(${item.id})">♡</button>
+                    <button class="add-to-wishlist" onclick="addToWishlist(${item.id})"><img src="../assets/icons/button36px/white-heart.svg" alt="빈 하트"></button>
                     <button class="remove-item" onclick="removeItem(${item.id})">🗑️</button>
                 </div>
             </div>
