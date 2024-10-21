@@ -8,9 +8,9 @@ let cart = {
 let wishlist = [];
 
 // 초기화 함수: 서버에서 카트와 위시리스트 데이터를 불러옴
-function initCart() {
+async function initCart() {
     // 카트 데이터 불러오기
-    axios.get('/api/cart')
+    await axios.get('https://11.fesp.shop/cart')
         .then(response => {
             cart.items = response.data.items;
             updateCartView();
@@ -18,7 +18,7 @@ function initCart() {
         .catch(error => console.error('카트 데이터를 불러오는 중 오류 발생:', error));
 
     // 위시리스트 데이터 불러오기
-    axios.get('/api/wishlist')
+    axios.get('https://11.fesp.shop/wishlist')
         .then(response => {
             wishlist = response.data.items;
             updateWishlistView();
@@ -92,7 +92,7 @@ function changeQuantity(itemId, change) {
         updateCartView();
 
         // 서버에 변경된 수량 업데이트 요청
-        axios.put(`/api/cart/${itemId}`, { quantity: item.quantity })
+        axios.put(`https://11.fesp.shop/cart/${itemId}`, { quantity: item.quantity })
             .catch(error => console.error('수량 업데이트 중 오류 발생:', error));
     }
 }
@@ -104,7 +104,7 @@ function updateQuantity(itemId, newQuantity) {
         updateCartView();
 
         // 서버에 변경된 수량 업데이트 요청
-        axios.put(`/api/cart/${itemId}`, { quantity: item.quantity })
+        axios.put(`https://11.fesp.shop/cart/${itemId}`, { quantity: item.quantity })
             .catch(error => console.error('수량 업데이트 중 오류 발생:', error));
     }
 }
@@ -115,7 +115,7 @@ function removeItem(itemId) {
     updateCartView();
 
     // 서버에 아이템 제거 요청
-    axios.delete(`/api/cart/${itemId}`)
+    axios.delete(`https://11.fesp.shop/cart/${itemId}`)
         .catch(error => console.error('아이템 제거 중 오류 발생:', error));
 }
 
@@ -126,7 +126,7 @@ function addToWishlist(itemId) {
         updateWishlistView();
 
         // 서버에 위시리스트에 항목 추가 요청
-        axios.post('/api/wishlist', item)
+        axios.post('https://11.fesp.shop/wishlist', item)
             .catch(error => console.error('위시리스트에 항목 추가 중 오류 발생:', error));
     }
 }
@@ -143,14 +143,14 @@ function addToCartFromWishlist(itemId) {
         updateCartView();
 
         // 서버에 카트에 항목 추가 요청
-        axios.post('/api/cart', item)
+        axios.post('https://11.fesp.shop/cart', item)
             .catch(error => console.error('카트에 항목 추가 중 오류 발생:', error));
     }
 }
 
 document.getElementById('order-button').addEventListener('click', function() {
     // 서버에 주문 요청
-    axios.post('/api/order', cart)
+    axios.post('https://11.fesp.shop/order', cart)
         .then(() => alert('주문이 완료되었습니다!'))
         .catch(error => console.error('주문 중 오류 발생:', error));
 });
