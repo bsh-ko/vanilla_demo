@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>장바구니</title>
+    <link rel="stylesheet" href="/src/components/header/header.css" />
+    <link rel="stylesheet" href="/src/components/footer/footer.css" />
+    <link rel="stylesheet" href="../../../../style.css" />
+    <link rel="stylesheet" href="./cart.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="header-wrap"></div>
+      <div class="main-layout">
+        <div class="cart-container">
+          <div class="cart-layout">
+            <h1>장바구니</h1>
+            <div id="cart-items"></div>
+            <!-- 장바구니 목록 -->
+            <div id="empty-cart-message" style="display: none">
+              <!-- 장바구니 비어있을 때 문구 -->
+              장바구니에 상품이 없습니다.
+            </div>
+          </div>
+          <div id="order-summary">
+            <h2>주문 내역</h2>
+            <div class="order-details">
+              <div class="order-row">
+                <span>상품 금액</span>
+                <span id="subtotal">0 원</span>
+              </div>
+              <div class="order-row">
+                <span>배송비</span>
+                <span id="shipping">무료</span>
+              </div>
+              <div class="order-row total">
+                <strong>총 결제 금액</strong>
+                <strong id="total">0 원</strong>
+              </div>
+            </div>
+            <button id="order-button">주문결제</button>
+          </div>
+        </div>
+        <div class="wishlist-container">
+          <h2>위시리스트</h2>
+          <div id="wishlist-items"></div>
+          <a href="#" class="see-more">위시리스트 상품 모두 보기</a>
+        </div>
+      </div>
+      <div class="recommend-container">
+        <h2 style="min-height: 500px">추천 제품</h2>
+      </div>
+      <div id="footer-wrap"></div>
+    </div>
+    <script type="module" src="./cart.js"></script>
+    <script type="module" src="/src/components/header/header.js"></script>
+    <script type="module" src="/src/components/footer/footer.js"></script>
+  
+  </body>
+</html>
